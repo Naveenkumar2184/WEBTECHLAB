@@ -1,0 +1,32 @@
+body
+{
+background-color: bisque;
+}
+h2{
+    text-align: center;
+    color: #202228;
+}
+
+
+#E{
+    color: #f1734a;
+}
+
+.content {
+font-size: 20px;
+background-color: #202228;
+color: #f1734a;
+}
+
+
+.ME{
+}
+.PARA{
+    font-size: 30PX;
+}
+.HEAD{
+    text-align: center;
+}
+table th,td{
+border:1px solid #f1734a;
+}
