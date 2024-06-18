@@ -1,0 +1,43 @@
+<!-- backend/public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        <div class="todo-input">
+            <input type="text" id="new-task" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <ul id="tasks"></ul>
+    </div>
+
+    <!-- Edit task modal -->
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="editTaskForm">
+                <input type="hidden" id="editTaskId">
+                <label for="editTaskTitle">Title:</label>
+                <input type="text" id="editTaskTitle" name="title" required>
+                <label for="editTaskDescription">Description:</label>
+                <textarea id="editTaskDescription" name="description"></textarea>
+                <label for="editTaskCompleted">Completed:</label>
+                <input type="checkbox" id="editTaskCompleted" name="completed">
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
