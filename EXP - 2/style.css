@@ -1,0 +1,42 @@
+body {
+    padding-top: 50px;
+  }
+  .card{
+    color: #E4002B;
+  
+  
+  }
+  .offer{
+    font-family:gothambold;
+  }
+  .head1{
+    font-family:gothambold;
+     text-align: center;
+     font-size: 19px;
+
+     
+}
+.head2{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    letter-spacing: 0.9px;
+}
+.subhead{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     text-align: center;
+}
+.navi{
+    font-family:gothambold;
+    font-size: 19px;
+}
+#formtext{
+  font-family:gothambold;
+  font-size: 19px;
+  color:red;
+}
+.RIGHTNAV{
+    float: right;
+}
+.rightnavlast{
+    float: right;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+          <div class="panel-heading">GST Calculator</div>
+          <div class="panel-body">
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon" id="totalAmount">$</span>
+              <input type="number"
+                     class="form-control"
+                     id="totalAmount"
+                     ng-model="inputVal"
+                     placeholder="Total receipt amount">
+            </div>
+          </div>
+      
+          <ul class="list-group">
+            <li class="list-group-item">
+              GST Exclusive Amount
+              <span class="pull-right">$ {{inputVal? (inputVal/1.1 | number: 2) : 0}}</span>
+            </li>
+            <li class="list-group-item">
+              GST Amount
+              <span class="pull-right">$ {{inputVal? (inputVal/11 | number: 2) : 0}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</body>
+</html>

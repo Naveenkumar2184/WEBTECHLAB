@@ -1,0 +1,33 @@
+<!-- src/app/product-list/product-list.component.html -->
+<div class="product-list">
+    <div class="product-card">
+        <img src="./assets/image/s3.jpg" alt="Product 1" class="product-image" />
+        <br>
+        <h2>Chicken Leg</h2>
+        <p>Made out of premium Crumbs </p>
+        <p>Rs. 299</p><br><br>
+        <button (click)="addToCart({id: 1, name: 'Chicekn Leg', price:299, description: 'Description for Product 1', imageUrl: 'assets/images/headset.webp'})" class="button-1">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="./assets/image/sneakers.jpg" alt="Product 9" class="product-image" /><br><br>
+        <h2>Chicken Bucket</h2>
+        <p>6 pcs of Fried Chicken</p>
+        <p>Rs.999</p><br><br><br>
+        <button (click)="addToCart({id: 9, name: 'Chicken Bucket', price: 999, description: 'Description for Product 9', imageUrl: 'https://via.placeholder.com/150'})" class="button-1">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="./assets/image/snekerwhite.jpg" alt="Product 5" class="product-image" />
+        <br>
+        <h2>Combo Pack</h2>
+        <p>With Pepsi,Chicken pieces</p>
+        <p>Rs. 899</p><br><br><br>
+        <button (click)="addToCart({id: 5, name: 'Combo Pack', price: 899, description: 'Description for Product 5', imageUrl: 'https://via.placeholder.com/150'})" class="button-1">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="./assets/image/s2.jpg" alt="Product 4" class="product-image" />
+        <br><br>
+        <h2>French Fries</h2>
+        <p>French Fries with Hot Serving</p>
+        <p>Rs. 999</p><br><br>
+        <button (click)="addToCart({id: 4, name: 'French Fries', price: 999, description: 'Description for Product 4', imageUrl: 'https://s.alicdn.com/@sc04/kf/Hd521db5e65a74fbd90100ff61e1c5f840.jpg_720x720q50.jpg'})" class="button-1">Add to Cart</button>
+    </div>

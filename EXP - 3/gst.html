@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GST Calculator</title>
+<style>
+    
+.head2{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    letter-spacing: 0.9px;
+}
+.subhead{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     text-align: center;
+}
+.navi{
+    font-family:gothambold;
+    font-size: 19px;
+}
+.RIGHTNAV{
+    float: right;
+}
+.rightnavlast{
+    float: right;
+}
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    #result {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar 
+    navbar-expand-lg  
+     navbar-light  
+     bg-light  
+      fixed-top"> 
+   <div class="container"> 
+   <a class="navbar-brand" href="#">
+     <img src= "logo.png" alt="" width="70" height="30"></a> 
+   <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+   <ul class="navbar-nav  
+          me-3 
+          mb-4  
+          mb-lg-0"> 
+   <li class="nav-item"> 
+   <a class="nav-link active navi" 
+      aria-current="page" 
+      href="#menu">Menu</a> 
+   </li> 
+   <li class="nav-item"> 
+   <a class="nav-link navi" href="#offers">Deals</a> 
+   </li> 
+   </ul> 
+   
+     <ul class="navbar-nav ml-auto">
+         <li class="nav-item">
+           <img src= "rightnav.png" alt="" width="40" height="50"></a> 
+   
+             <a class="nav-link RIGHTNAV head1 text-dark" href="#">Sign In</a>
+         </li>
+         <li class="nav-item">
+         
+   
+           <img src= "rightnav2.png " class="rightnavlast" alt="" width="40" height="50"></a> 
+         </li>
+     </ul>
+   </div>
+   
+   
+   </div> 
+   </div> 
+   </nav> 
+<form id="gstForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="text" id="address" placeholder="Address" required>
+
+    <label for="product">Product:</label><br>
+
+    <input type="radio" id="product1" name="product" value="Chicken Burger" checked>
+   <label for="product1">Chicken Burger</label><br>
+   
+   <input type="radio" id="product2" name="product" value="Pasta">
+   <label for="product2">Pasta</label><br>
+
+
+    <input type="radio" id="product3" name="product" value="Zinger Burger">
+    <label for="product2">Zinger Burger</label><br>
+    
+    <input type="radio" id="product4" name="product" value="Chicken Wings">
+    <label for="product2">Chicken Wings</label><br>
+    <input type="radio" id="product5" name="product" value="Chicken Popcorn">
+    <label for="product2">Chicken Popcorn</label><br><br>
+
+    <label for="quantity">Quantity:</label>
+    <select id="quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input type="submit" value="Calculate GST">
+</form>
+
+<div id="result"></div>
+
+<script>
+    document.getElementById('gstForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Get inputs
+        var name = document.getElementById('name').value;
+        var address = document.getElementById('address').value;
+        var product = document.querySelector('input[name="product"]:checked').value;
+        var quantity = parseInt(document.getElementById('quantity').value);
+
+        // Calculate GST
+        var gstRate = 0.18; // 18%
+        var totalPrice = calculateTotalPrice(product, quantity);
+        var gstAmount = totalPrice * gstRate;
+
+        // Display result
+        var resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+            <h2>Invoice</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Address:</strong> ${address}</p>
+            <p><strong>Product:</strong> ${product}</p>
+            <p><strong>Quantity:</strong> ${quantity}</p>
+            <p><strong>Total Price:</strong> ${totalPrice.toFixed(2)}</p>
+            <p><strong>GST Amount (18%):</strong> ${gstAmount.toFixed(2)}</p>
+            <p><strong>Total Amount (Including GST):</strong> ${(totalPrice + gstAmount).toFixed(2)}</p>
+        `;
+    });
+
+    function calculateTotalPrice(product, quantity) {
+        // Add your logic here to calculate total price based on product and quantity
+        // For simplicity, let's assume a fixed price for each product
+        if (product === 'Chicken Burger') {
+            return 50 * quantity;
+        } else if (product === 'Pasta') {
+            return 70 * quantity;
+        }
+        else if (product === 'Zinger Burger') {
+            return 90 * quantity;
+        } else if (product === 'Chicken Wings') {
+            return 100 * quantity;
+        } else if (product === 'Chicken Popcorn') {
+            return 190 * quantity;
+        }
+        return 0;
+    }
+</script>
+
+</body>
+</html>

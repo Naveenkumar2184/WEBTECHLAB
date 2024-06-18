@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    /* Make the body full height */
+}
+
+.navbar {
+    background-color: #1a1a1a;
+    width: 250px;
+    /* Set the width of the sidebar */
+    height: 100vh;
+    /* Make the sidebar full height */
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+    /* Adjusted box-shadow for sidebar */
+    position: fixed;
+    /* Fixed position to keep it on the left */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    overflow-x: hidden;
+    /* Hide horizontal overflow */
+}
+
+.navbar .nav-link {
+    display: block;
+    color: #f1f1f1;
+    text-align: left;
+    /* Align text to the left */
+    padding: 16px 20px;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-bottom: 1px solid #333333;
+    /* Optional: Add a border between links */
+}
+
+.navbar .nav-link:hover {
+    background-color: #575757;
+    color: #ffffff;
+}
+
+.navbar .nav-link.active {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.navbar .nav-link:focus {
+    outline: none;
+    background-color: #575757;
+    color: #ffffff;
+}
+
+
+/* Adjust the main content */
+
+.main-content {
+    margin-left: 250px;
+    /* Add a left margin equal to the sidebar width */
+    padding: 20px;
+    /* Add some padding */
+    flex-grow: 1;
+    /* Allow main content to grow and fill the space */
+}
