@@ -1,0 +1,64 @@
+main {
+    padding: 2rem;
+}
+
+#dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#dashboard h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #d12026;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.stat-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.stat-item p {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #555;
+}
+
+.recent-activity {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.recent-activity h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.recent-activity ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-activity ul li {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}

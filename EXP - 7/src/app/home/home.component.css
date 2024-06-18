@@ -1,0 +1,80 @@
+main {
+    padding: 2rem;
+}
+
+#home .hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#home .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#home .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#home .hero-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+#home .hero-text p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.button {
+    background-color: #d12026;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 0 1rem 1rem;
+    color: #555;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
