@@ -1,0 +1,108 @@
+<h1>Student Form</h1>
+<form [formGroup]="frm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" formControlName="firstname" />
+        <span *ngIf="frm.controls['firstname'].invalid && (frm.controls['firstname'].dirty || frm.controls['firstname'].touched)">
+            <b *ngIf="frm.controls['firstname'].errors?.['required']">This field is required</b>
+            <b *ngIf="frm.controls['firstname'].errors?.['pattern']">Invalid name format</b>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" formControlName="lastname" />
+        <span *ngIf="frm.controls['lastname'].invalid && (frm.controls['lastname'].dirty || frm.controls['lastname'].touched)">
+            <b *ngIf="frm.controls['lastname'].errors?.['maxlength']">Max length is 6</b>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" formControlName="emailid" />
+        <span *ngIf="frm.controls['emailid'].invalid && (frm.controls['emailid'].dirty || frm.controls['emailid'].touched)">
+            <b *ngIf="frm.controls['emailid'].errors?.['email']">Enter a valid email</b>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <div class="radio-group">
+            <label for="male">
+                <input type="radio" value="male" id="male" name="gender" formControlName="gender" /> Male
+            </label>
+            <label for="female">
+                <input type="radio" value="female" id="female" name="gender" formControlName="gender" /> Female
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="department">Department</label>
+        <select id="department" name="department" formControlName="department">
+            <option value="IT">IT</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="EIE">EIE</option>
+            <option value="CSD">CSD</option>
+            <option value="AIDS">AI</option>
+            <option value="AIMs">AI</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Programming Languages</label>
+        <div class="checkbox-group">
+            <label for="c">
+                <input type="checkbox" id="c" name="c" (change)="onCheckboxChange($event)" value="C"> C
+            </label>
+            <label for="c++">
+                <input type="checkbox" id="c++" name="c++" (change)="onCheckboxChange($event)" value="c++"> C++
+            </label>
+            <label for="python">
+                <input type="checkbox" id="python" name="python" (change)="onCheckboxChange($event)" value="Python"> Python
+            </label>
+            <label for="java">
+                <input type="checkbox" id="java" name="java" (change)="onCheckboxChange($event)" value="Java"> Java
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="isverified">Confirm</label>
+        <input type="checkbox" id="isverified" name="isverified" formControlName="isverified">
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="!frm.valid">Submit</button>
+    </div>
+</form>
+
+<div *ngIf="submitted">
+    <h2>User Details</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <td>{{userDetails.firstname}}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{userDetails.lastname}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{userDetails.emailid}}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>{{userDetails.gender}}</td>
+        </tr>
+        <tr>
+            <th>Department</th>
+            <td>{{userDetails.department}}</td>
+        </tr>
+        <tr>
+            <th>Programming Languages</th>
+            <td>{{userDetails.languages.join(', ')}}</td>
+        </tr>
+        <tr>
+            <th>Verified</th>
+            <td>{{userDetails.isverified ? 'Yes' : 'No'}}</td>
+        </tr>
+    </table>
+</div>
+<router-outlet></router-outlet>
